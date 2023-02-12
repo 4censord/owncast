@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "matrix=$(
             curl https://api.github.com/repos/owncast/owncast/releases |
-            jq '[ .[] | .tag_name ]'
+            jq '[ .[] | .tag_name ]' --compact-output
           )" >> $GITHUB_OUTPUT
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
