@@ -19,5 +19,5 @@ jobs:
         run: |
           curl https://api.github.com/repos/owncast/owncast/releases |
           jq '.[] | .tag_name'
-    # outputs:
-    #   matrix: ${{ steps.set-matrix.outputs.matrix }}
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
