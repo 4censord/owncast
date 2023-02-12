@@ -17,10 +17,10 @@ jobs:
       - name: Generate matrix with all released versions
         id: set-matrix
         run: |
-          echo "::set-output name=matrix::$(
+          echo "matrix=$(
             curl https://api.github.com/repos/owncast/owncast/releases |
             jq '[ .[] | .tag_name ]'
-          )"
+          )" >> $GITHUB_OUTPUT
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
   checkUpdate:
