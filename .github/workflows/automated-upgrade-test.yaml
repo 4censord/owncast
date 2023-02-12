@@ -12,6 +12,8 @@ jobs:
   generateVersions:
     runs-on: ubuntu-latest
     steps:
+      - run: curl --version
+      - run: jq --version
       - name: Generate matrix with all released versions
         id: set-matrix
         run: |
